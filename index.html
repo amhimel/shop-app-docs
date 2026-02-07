@@ -1,0 +1,1515 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Shop App – Documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Complete Flutter e-commerce app with Node.js backend and Stripe payment integration." />
+<meta name="keywords" content="Flutter ecommerce, Node.js API, Stripe payment, MongoDB app, full stack mobile app" />
+<meta name="author" content="Am Himel" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <h1>🛍️ Shop App – Complete E-commerce Solution</h1>
+      <p>Flutter Mobile App with Node.js Backend & Stripe Payment</p>
+      <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.85">
+      Version 1.0.0 • Last Updated: February 7, 2026
+      </p>
+    </header>
+
+    <!-- MAIN LAYOUT -->
+    <div class="container">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <h3>📚 Documentation</h3>
+        <ul>
+          <li><a href="#introduction" class="active">Introduction</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#screenshots">Screenshots</a></li>
+          <li><a href="#tech-stack">Tech Stack</a></li>
+
+          <li>
+            <a href="#installation">Installation</a>
+            <ul>
+              <li><a href="#requirements">Requirements</a></li>
+              <li><a href="#backend-setup">Backend Setup</a></li>
+              <li><a href="#payment-setup">Payment Setup</a></li>
+              <li><a href="#frontend-setup">Frontend Setup</a></li>
+            </ul>
+          </li>
+
+          <li><a href="#configuration">Configuration</a></li>
+          <li><a href="#api-documentation">API Documentation</a></li>
+          <li><a href="#deployment">Deployment</a></li>
+          <li><a href="#troubleshooting">Troubleshooting</a></li>
+          <li><a href="#support">Support</a></li>
+        </ul>
+      </aside>
+
+      <!-- CONTENT -->
+      <main class="content">
+        <section id="introduction">
+          <!-- INTRODUCTION -->
+          <h2>📖 Introduction</h2>
+          <p>
+            Welcome to <strong>Shop App</strong>, a complete full-stack
+            e-commerce solution built with modern technologies. This application
+            includes a Flutter mobile app, a robust Node.js/Express backend, and
+            integrated Stripe payment processing.
+          </p>
+
+          <div class="success">
+            <strong>✅ Complete Package Includes:</strong>
+            <ul style="margin-top: 0.5rem">
+              <li>Flutter Mobile App (iOS & Android compatible)</li>
+              <li>Node.js/Express REST API Backend</li>
+              <li>Stripe Payment Gateway Integration</li>
+              <li>MongoDB Database with Schemas</li>
+              <li>User Authentication & Authorization</li>
+              <li>Shopping Cart & Order Management</li>
+            </ul>
+          </div>
+          <div class="success">
+            <strong>🎯This application is perfect for:</strong>
+            <ul style="margin-top: 0.5rem">
+              <li>
+                Developers looking to build an e-commerce mobile app quickly
+              </li>
+              <li>Entrepreneurs wanting to launch their online store</li>
+              <li>Businesses transitioning to mobile commerce</li>
+              <li>Students learning full-stack mobile development</li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="features">
+          <h2>✨ Features</h2>
+
+          <div class="feature-grid">
+            <div class="feature-card">
+              <h4>🔐 User Authentication</h4>
+              <p>
+                Secure user registration and login with JWT tokens, password
+                hashing with bcrypt, and profile photo upload support.
+              </p>
+            </div>
+
+            <div class="feature-card">
+              <h4>🛒 Shopping Cart</h4>
+              <p>
+                Full-featured cart with add/remove items, quantity management,
+                persistent storage, and real-time updates.
+              </p>
+            </div>
+
+            <div class="feature-card">
+              <h4>💳 Payment Processing</h4>
+              <p>
+                Stripe integration for secure payments, webhook support for
+                order confirmation, and checkout session management.
+              </p>
+            </div>
+
+            <div class="feature-card">
+              <h4>📦 Product Management</h4>
+              <p>
+                Complete CRUD operations, multiple product images, size
+                variants, search functionality, and category filtering.
+              </p>
+            </div>
+
+            <div class="feature-card">
+              <h4>📋 Order Tracking</h4>
+              <p>
+                Order history viewing, payment status tracking, delivery status
+                updates, and customer order details.
+              </p>
+            </div>
+
+            <div class="feature-card">
+              <h4>🔍 Product Search</h4>
+              <p>
+                MongoDB Atlas Search integration for fast, relevant product
+                discovery with wildcard text search.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="screenshots">
+          <h2>📱 App Screenshots</h2>
+          <p>
+            Here's a visual overview of the Shop App's user interface and
+            features:
+          </p>
+
+          <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+              gap: 2rem;
+              margin: 2rem 0;
+            "
+          >
+            <div style="text-align: center">
+              <img
+                src="assets/images/demo.gif"
+                alt="App Demo"
+                style="
+                  width: 100%;
+                  border-radius: 12px;
+                  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+                  margin-bottom: 1rem;
+                "
+              />
+              <p style="color: #667eea; font-weight: 600">Project Demo</p>
+            </div>
+
+            <div style="text-align: center">
+              <img
+                src="assets/images/1.jpeg"
+                alt="App Screenshot 1"
+                style="
+                  width: 100%;
+                  border-radius: 12px;
+                  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+                  margin-bottom: 1rem;
+                "
+              />
+              <p style="color: #667eea; font-weight: 600">Welcome Screen</p>
+            </div>
+
+            <div style="text-align: center">
+              <img
+                src="assets/images/12.jpeg"
+                alt="App Screenshot 2"
+                style="
+                  width: 100%;
+                  border-radius: 12px;
+                  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+                  margin-bottom: 1rem;
+                "
+              />
+              <p style="color: #667eea; font-weight: 600">Login Screen</p>
+            </div>
+
+            <div style="text-align: center">
+              <img
+                src="assets/images/11.jpeg"
+                alt="App Screenshot 3"
+                style="
+                  width: 100%;
+                  border-radius: 12px;
+                  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+                  margin-bottom: 1rem;
+                "
+              />
+              <p style="color: #667eea; font-weight: 600">Registration</p>
+            </div>
+
+            <div style="text-align: center">
+              <img
+                src="assets/images/2.jpeg"
+                alt="App Screenshot 4"
+                style="
+                  width: 100%;
+                  border-radius: 12px;
+                  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+                  margin-bottom: 1rem;
+                "
+              />
+              <p style="color: #667eea; font-weight: 600">Loading Screen</p>
+            </div>
+
+            <div style="text-align: center">
+              <img
+                src="assets/images/3.jpeg"
+                alt="App Screenshot 5"
+                style="
+                  width: 100%;
+                  border-radius: 12px;
+                  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+                  margin-bottom: 1rem;
+                "
+              />
+              <p style="color: #667eea; font-weight: 600">Product List</p>
+            </div>
+
+            <div style="text-align: center">
+              <img
+                src="assets/images/5.jpeg"
+                alt="App Screenshot 5_1"
+                style="
+                  width: 100%;
+                  border-radius: 12px;
+                  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+                  margin-bottom: 1rem;
+                "
+              />
+              <p style="color: #667eea; font-weight: 600">Search Product</p>
+            </div>
+
+            <div style="text-align: center">
+              <img
+                src="assets/images/5_1.jpeg"
+                alt="App Screenshot 6"
+                style="
+                  width: 100%;
+                  border-radius: 12px;
+                  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+                  margin-bottom: 1rem;
+                "
+              />
+              <p style="color: #667eea; font-weight: 600">Search Result</p>
+            </div>
+
+            <div style="text-align: center">
+              <img
+                src="assets/images/6.jpeg"
+                alt="App Screenshot 6"
+                style="
+                  width: 100%;
+                  border-radius: 12px;
+                  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+                  margin-bottom: 1rem;
+                "
+              />
+              <p style="color: #667eea; font-weight: 600">Product Details</p>
+            </div>
+
+            <div style="text-align: center">
+              <img
+                src="assets/images/9.jpeg"
+                alt="App Screenshot 9"
+                style="
+                  width: 100%;
+                  border-radius: 12px;
+                  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+                  margin-bottom: 1rem;
+                "
+              />
+              <p style="color: #667eea; font-weight: 600">Add to Cart</p>
+            </div>
+
+            <div style="text-align: center">
+              <img
+                src="assets/images/10.jpeg"
+                alt="App Screenshot 10"
+                style="
+                  width: 100%;
+                  border-radius: 12px;
+                  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+                  margin-bottom: 1rem;
+                "
+              />
+              <p style="color: #667eea; font-weight: 600">Checkout Page</p>
+            </div>
+
+            <div style="text-align: center">
+              <img
+                src="assets/images/10_2.jpeg"
+                alt="App Screenshot 10_2"
+                style="
+                  width: 100%;
+                  border-radius: 12px;
+                  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+                  margin-bottom: 1rem;
+                "
+              />
+              <p style="color: #667eea; font-weight: 600">Payment Successful</p>
+            </div>
+
+            <div style="text-align: center">
+              <img
+                src="assets/images/8.jpeg"
+                alt="App Screenshot 8"
+                style="
+                  width: 100%;
+                  border-radius: 12px;
+                  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+                  margin-bottom: 1rem;
+                "
+              />
+              <p style="color: #667eea; font-weight: 600">Order Page</p>
+            </div>
+
+            <div style="text-align: center">
+              <img
+                src="assets/images/13.jpeg"
+                alt="App Screenshot 13"
+                style="
+                  width: 100%;
+                  border-radius: 12px;
+                  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+                  margin-bottom: 1rem;
+                "
+              />
+              <p style="color: #667eea; font-weight: 600">Non User Page</p>
+            </div>
+
+            <div style="text-align: center">
+              <img
+                src="assets/images/14.jpeg"
+                alt="App Screenshot 14"
+                style="
+                  width: 100%;
+                  border-radius: 12px;
+                  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+                  margin-bottom: 1rem;
+                "
+              />
+              <p style="color: #667eea; font-weight: 600">Profile Page</p>
+            </div>
+          </div>
+
+          <div class="info">
+            <strong>💡 Note:</strong> All screenshots show the actual app
+            interface. The app is fully functional and ready to use with your
+            own products and branding.
+          </div>
+          <div class="info">
+            <strong>App Flow Overview</strong>
+            <p>The app follows a smooth user journey:</p>
+            <ol>
+              <li>
+                <strong>Welcome & Authentication</strong> - Users can register
+                or login with their credentials
+              </li>
+              <li>
+                <strong>Browse Products</strong> - Explore products by category
+                with beautiful product cards
+              </li>
+              <li>
+                <strong>Product Details</strong> - View detailed information,
+                images, and select sizes
+              </li>
+              <li>
+                <strong>Shopping Cart</strong> - Manage items, update
+                quantities, and review order
+              </li>
+              <li>
+                <strong>Secure Checkout</strong> - Complete purchase with Stripe
+                payment integration
+              </li>
+              <li>
+                <strong>Order Tracking</strong> - View order history and track
+                delivery status
+              </li>
+              <li>
+                <strong>User Profile</strong> - Manage account settings and
+                profile information
+              </li>
+            </ol>
+          </div>
+        </section>
+
+        <section id="tech-stack">
+          <h2>🛠️ Tech Stack</h2>
+
+          <h3>Frontend (Mobile App)</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Technology</th>
+                <th>Purpose</th>
+                <th>Version</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="badge badge-primary">Flutter</span></td>
+                <td>Mobile app framework</td>
+                <td>Latest</td>
+              </tr>
+              <tr>
+                <td><span class="badge badge-primary">Dart</span></td>
+                <td>Programming language</td>
+                <td>Latest</td>
+              </tr>
+              <tr>
+                <td><span class="badge badge-primary">Provider</span></td>
+                <td>State management</td>
+                <td>6.x</td>
+              </tr>
+              <tr>
+                <td><span class="badge badge-primary">Hive</span></td>
+                <td>Local database & caching</td>
+                <td>2.x</td>
+              </tr>
+              <tr>
+                <td><span class="badge badge-primary">HTTP</span></td>
+                <td>API communication</td>
+                <td>0.14.x</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="badge badge-primary">Shared Preferences</span>
+                </td>
+                <td>Lightweight local storage</td>
+                <td>Latest</td>
+              </tr>
+              <tr>
+                <td><span class="badge badge-primary">Image Picker</span></td>
+                <td>Image selection (camera/gallery)</td>
+                <td>Latest</td>
+              </tr>
+              <tr>
+                <td><span class="badge badge-primary">Flutter Stripe</span></td>
+                <td>Stripe payment integration</td>
+                <td>Latest</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Backend (API Server)</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Technology</th>
+                <th>Purpose</th>
+                <th>Version</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="badge badge-success">Node.js</span></td>
+                <td>Runtime environment</td>
+                <td>14.x or higher</td>
+              </tr>
+              <tr>
+                <td><span class="badge badge-success">Express.js</span></td>
+                <td>Web framework</td>
+                <td>4.x</td>
+              </tr>
+              <tr>
+                <td><span class="badge badge-success">MongoDB</span></td>
+                <td>Database</td>
+                <td>5.x</td>
+              </tr>
+              <tr>
+                <td><span class="badge badge-success">Mongoose</span></td>
+                <td>ODM library</td>
+                <td>7.x</td>
+              </tr>
+              <tr>
+                <td><span class="badge badge-success">JWT</span></td>
+                <td>Authentication</td>
+                <td>9.x</td>
+              </tr>
+              <tr>
+                <td><span class="badge badge-success">Bcrypt</span></td>
+                <td>Password hashing</td>
+                <td>5.x</td>
+              </tr>
+              <tr>
+                <td><span class="badge badge-success">Multer</span></td>
+                <td>File uploads</td>
+                <td>Latest</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Payment Gateway</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Technology</th>
+                <th>Purpose</th>
+                <th>Version</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="badge badge-warning">Stripe</span></td>
+                <td>Payment processing</td>
+                <td>Latest</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="badge badge-warning">Stripe Webhooks</span>
+                </td>
+                <td>Payment confirmation</td>
+                <td>Latest</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="installation">
+          <h2>⚙️ Installation</h2>
+
+          <div id="requirements">
+            <h3>📋 System Requirements</h3>
+            <ul>
+              <li><strong>Node.js</strong>: Version 14.x or higher</li>
+              <li>
+                <strong>npm</strong> or <strong>yarn</strong>: Latest version
+              </li>
+              <li>
+                <strong>MongoDB Atlas</strong>: Free tier account (or local
+                MongoDB)
+              </li>
+              <li><strong>Stripe Account</strong>: For payment processing</li>
+              <li><strong>Code Editor</strong>: VS Code (recommended)</li>
+              <li><strong>Git</strong>: For cloning repositories</li>
+            </ul>
+          </div>
+
+          <div id="backend-setup">
+            <h3>🔧 Backend API Setup</h3>
+
+            <h4>Step 1: Clone the Repository</h4>
+            <div class="code-block">
+              git clone https://github.com/amhimel/shop-app-api.git cd
+              shop-app-api
+            </div>
+
+            <h4>Step 2: Install Dependencies</h4>
+            <div class="code-block">npm install</div>
+
+            <div class="note">
+              <strong>📦 Dependencies Installed:</strong> express, mongoose,
+              dotenv, jsonwebtoken, bcryptjs, multer, cors
+            </div>
+
+            <h4>Step 3: Create Environment File</h4>
+            <p>Create a <code>.env</code> file in the root directory:</p>
+            <div class="code-block">
+              PORT=3005 MONGO_URI=mongodb+srv://your-username:<a
+                href="/cdn-cgi/l/email-protection"
+                class="__cf_email__"
+                data-cfemail="b2cbddc7c09fc2d3c1c1c5ddc0d6f2d1dec7c1c6d7c09cdfdddcd5ddd6d09cdcd7c6"
+                >[email&#160;protected]</a
+              >/shops SECRET=your-secret-key JWT_SECRET=your-jwt-secret-key
+            </div>
+
+            <div class="warning">
+              <strong>⚠️ Important:</strong> Replace the MongoDB URI with your
+              own credentials. Never commit the .env file to version control.
+            </div>
+
+            <h4>Step 4: Create Required Directories</h4>
+            <div class="code-block">mkdir uploads</div>
+
+            <h4>Step 5: Start the Server</h4>
+            <div class="code-block">
+              npm start # or for development with auto-reload npm run dev
+            </div>
+
+            <div class="success">
+              <strong>✅ Success!</strong> The backend API should now be running
+              on <code>http://localhost:3005</code>
+            </div>
+
+            <h4>Project Structure</h4>
+            <div class="folder-structure">
+              <pre>
+shop-app-api/
+├── <span class="folder">controllers</span>/
+│   ├── <span class="file">authControllers.js</span>
+│   ├── <span class="file">cartControllers.js</span>
+│   ├── <span class="file">ordersControllers.js</span>
+│   ├── <span class="file">productControllers.js</span>
+│   └── <span class="file">userControllers.js</span>
+├── <span class="folder">models</span>/
+│   ├── <span class="file">Cart.js</span>
+│   ├── <span class="file">Orders.js</span>
+│   ├── <span class="file">Product.js</span>
+│   └── <span class="file">Users.js</span>
+├── <span class="folder">routes</span>/
+│   ├── <span class="file">auth.js</span>
+│   ├── <span class="file">cart.js</span>
+│   ├── <span class="file">orders.js</span>
+│   ├── <span class="file">products.js</span>
+│   └── <span class="file">user.js</span>
+├── <span class="folder">middleware</span>/
+│   └── <span class="file">verifyToken.js</span>
+├── <span class="folder">utils</span>/
+│   └── <span class="file">multer.js</span>
+├── <span class="folder">uploads</span>/
+├── <span class="file">.env</span>
+├── <span class="file">index.js</span>
+└── <span class="file">package.json</span>
+  </pre>
+            </div>
+          </div>
+
+          <div id="payment-setup">
+            <h3>💳 Payment Backend Setup</h3>
+
+            <h4>Step 1: Clone Payment Repository</h4>
+            <div class="code-block">
+              git clone https://github.com/amhimel/payment_backend.git cd
+              payment_backend
+            </div>
+
+            <h4>Step 2: Install Dependencies</h4>
+            <div class="code-block">npm install</div>
+
+            <h4>Step 3: Configure Environment Variables</h4>
+            <p>Create a <code>.env</code> file:</p>
+            <div class="code-block">
+              PORT=3003 MONGO_URI=mongodb+srv://your-username:<a
+                href="/cdn-cgi/l/email-protection"
+                class="__cf_email__"
+                data-cfemail="e1988e9493cc91809292968e9385a1828d9492958493cf8c8e8f868e8583cf8f8495"
+                >[email&#160;protected]</a
+              >/shops STRIPE_SECRET=sk_test_your_stripe_secret_key
+              STRIPE_WEBHOOK_SECRET=whsec_your_webhook_secret
+              STRIPE_PUBLISHABLE_KEY=pk_test_your_publishable_key
+            </div>
+
+            <div class="info">
+              <strong>ℹ️ Getting Stripe Keys:</strong>
+              <ol style="margin-top: 0.5rem">
+                <li>
+                  Sign up at
+                  <a href="https://stripe.com" target="_blank">stripe.com</a>
+                </li>
+                <li>Go to Developers → API Keys</li>
+                <li>Copy your publishable and secret keys</li>
+                <li>For webhooks, go to Developers → Webhooks</li>
+              </ol>
+            </div>
+
+            <div class="step-card">
+              <h4>🔔 Step 4: Configure Stripe Webhooks</h4>
+
+              <p class="step-desc">
+                You need to set up a webhook endpoint in your Stripe dashboard
+                to receive payment events.
+              </p>
+
+              <ol class="step-list">
+                <li>
+                  Go to
+                  <strong>Stripe Dashboard → Developers → Webhooks</strong>
+                </li>
+                <li>Click <span class="highlight">Add endpoint</span></li>
+                <li>
+                  Enter your webhook URL:
+                  <code class="inline-code"
+                    >https://your-domain.com/webhook</code
+                  >
+                </li>
+                <li>
+                  Select events to listen to:
+                  <ul class="event-list">
+                    <li><code>checkout.session.completed</code></li>
+                    <li><code>payment_intent.succeeded</code></li>
+                  </ul>
+                </li>
+                <li>
+                  Copy the <strong>Webhook Signing Secret</strong> and add it to
+                  your <code class="inline-code">.env</code> file
+                </li>
+              </ol>
+            </div>
+
+            <h4>Step 5: Start Payment Server</h4>
+            <div class="code-block">npm start</div>
+
+            <div class="success">
+              <strong>✅ Success!</strong> Payment backend is running on
+              <code>http://localhost:3003</code>
+            </div>
+
+            <h4>Payment Server Structure</h4>
+            <div class="folder-structure">
+              <pre>
+payment_backend/
+├── <span class="folder">routes</span>/
+│   ├── <span class="file">stripe.js</span>
+│   ├── <span class="file">checkout-success.html</span>
+│   └── <span class="file">cancel.html</span>
+├── <span class="folder">models</span>/
+│   └── <span class="file">orders.js</span>
+├── <span class="file">.env</span>
+├── <span class="file">index.js</span>
+└── <span class="file">package.json</span>
+  </pre>
+            </div>
+          </div>
+
+          <div id="frontend-setup">
+            <h3>📱 Mobile App Setup</h3>
+
+            <h4>Step 1: Clone Mobile App Repository</h4>
+            <div class="code-block">
+              git clone https://github.com/amhimel/shop-app.git cd shop-app
+            </div>
+
+            <h4>📦 Step 2: Install Dependencies</h4>
+
+            <p class="step-desc">
+              Make sure Flutter is installed and then install all required
+              project dependencies.
+            </p>
+
+            <pre class="code-block">
+flutter --version
+flutter doctor
+  </pre
+            >
+
+            <p class="step-desc">Install Flutter packages:</p>
+
+            <pre class="code-block">
+flutter pub get
+  </pre
+            >
+          </div>
+
+          <h4>Step 3: Configure API Endpoints</h4>
+          <p>
+            Update the API base URLs in your configuration file to point to your
+            backend:
+          </p>
+          <div class="code-block">
+            // config.js or constants.js export const API_URL =
+            "http://localhost:3005/api"; export const PAYMENT_URL =
+            "http://localhost:3003/stripe";
+          </div>
+
+          <div class="warning">
+            <strong>⚠️ For Physical Devices:</strong> Replace
+            <code>localhost</code> with your computer's local IP address (e.g.,
+            <code>192.168.1.100</code>)
+          </div>
+
+          <h4>Step 4: Start the App</h4>
+          <div class="code-block">flutter run</div>
+
+
+          <h4>Step 5: Run on Device/Simulator</h4>
+          <ul>
+            <li>Press <code>a</code> for Android emulator</li>
+            <li>Press <code>i</code> for iOS simulator</li>
+            <li>
+              For physical devices, connect via USB and select the device from
+              the list
+            </li>
+          </ul>
+
+          <div class="success">
+            <strong>✅ Success!</strong> Your mobile app should now be running
+            and connected to the backend!
+          </div>
+          <div class="info">
+            <strong>💡 Tip:</strong> Use Flutter DevTools for debugging and
+            performance monitoring.
+          </div>
+        </section>
+
+        <section id="configuration">
+          <h2>🔐 Configuration</h2>
+
+          <div id="env-variables">
+            <h3>Environment Variables Explained</h3>
+
+            <h4>Backend API (.env)</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th>Description</th>
+                  <th>Example</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>PORT</code></td>
+                  <td>Server port number</td>
+                  <td>3005</td>
+                </tr>
+                <tr>
+                  <td><code>MONGO_URI</code></td>
+                  <td>MongoDB connection string</td>
+                  <td>
+                    mongodb+srv://user:<a
+                      href="/cdn-cgi/l/email-protection"
+                      class="__cf_email__"
+                      data-cfemail="c4b4a5b7b784a7a8b1b7b0a1b6eaa9abaaa3aba0a6eaaaa1b0"
+                      >[email&#160;protected]</a
+                    >/db
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>SECRET</code></td>
+                  <td>General encryption secret</td>
+                  <td>your-random-secret-string</td>
+                </tr>
+                <tr>
+                  <td><code>JWT_SECRET</code></td>
+                  <td>JWT token signing secret</td>
+                  <td>your-jwt-secret-key</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h4>Payment Backend (.env)</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th>Description</th>
+                  <th>Where to Get</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>STRIPE_SECRET</code></td>
+                  <td>Stripe secret key</td>
+                  <td>Stripe Dashboard → API Keys</td>
+                </tr>
+                <tr>
+                  <td><code>STRIPE_PUBLISHABLE_KEY</code></td>
+                  <td>Stripe publishable key</td>
+                  <td>Stripe Dashboard → API Keys</td>
+                </tr>
+                <tr>
+                  <td><code>STRIPE_WEBHOOK_SECRET</code></td>
+                  <td>Webhook signing secret</td>
+                  <td>Stripe Dashboard → Webhooks</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div id="stripe-config">
+            <h3>Stripe Configuration</h3>
+
+            <h4>Test Mode vs Live Mode</h4>
+            <div class="info">
+              <strong>ℹ️ Test Mode:</strong> Use test API keys (starting with
+              <code>sk_test_</code> and <code>pk_test_</code>) for development
+            </div>
+            <div class="warning">
+              <strong>⚠️ Live Mode:</strong> Replace with live keys (starting
+              with <code>sk_live_</code> and <code>pk_live_</code>) only when
+              ready for production
+            </div>
+
+            <h4>Test Card Numbers</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>Card Number</th>
+                  <th>Result</th>
+                  <th>Details</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>4242 4242 4242 4242</td>
+                  <td><span class="badge badge-success">Success</span></td>
+                  <td>Successful payment</td>
+                </tr>
+                <tr>
+                  <td>4000 0000 0000 9995</td>
+                  <td><span class="badge badge-danger">Declined</span></td>
+                  <td>Insufficient funds</td>
+                </tr>
+                <tr>
+                  <td>4000 0025 0000 3155</td>
+                  <td><span class="badge badge-warning">3D Secure</span></td>
+                  <td>Requires authentication</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div id="mongodb-config" class="config-card">
+            <h3>🍃 MongoDB Configuration</h3>
+
+            <div class="setup-section">
+              <h4>🚀 Setting Up MongoDB Atlas</h4>
+
+              <ol class="step-list">
+                <li>
+                  Go to
+                  <a href="https://www.mongodb.com/cloud/atlas" target="_blank">
+                    MongoDB Atlas
+                  </a>
+                </li>
+                <li>Create a free cluster</li>
+                <li>Create a database user with read/write permissions</li>
+                <li>
+                  Add your IP address to the whitelist (<code>0.0.0.0/0</code>
+                  for development)
+                </li>
+                <li>
+                  Get your connection string from
+                  <strong>Connect → Connect your application</strong>
+                </li>
+                <li>
+                  Replace <code>&lt;password&gt;</code> with your database
+                  password
+                </li>
+              </ol>
+            </div>
+
+            <div class="setup-section">
+              <h4>🔎 Search Index Setup (Product Search)</h4>
+
+              <p class="step-desc">
+                Create a search index inside MongoDB Atlas to enable product
+                search.
+              </p>
+
+              <ol class="step-list">
+                <li>Open your cluster</li>
+                <li>Click the <strong>Search</strong> tab</li>
+                <li>Select <strong>Create Search Index</strong></li>
+                <li>Choose <strong>JSON Editor</strong></li>
+                <li>Paste the configuration below:</li>
+              </ol>
+
+              <pre class="code-block">
+{
+  "mappings": {
+    "dynamic": true
+  }
+}
+    </pre
+              >
+
+              <div class="info">
+                Name the index:
+                <code>shoes</code>
+                (or update the index name in
+                <code>productControllers.js</code>)
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="api-documentation">
+          <h2 class="section-title">📡 API Documentation</h2>
+          <div class="api-container">
+
+  <!-- ================= AUTH ================= -->
+  <section id="auth-api" class="api-section">
+    <h3>🔐 Authentication API</h3>
+
+    <div class="api-card">
+      <div class="api-header">
+        <span class="method post">POST</span>
+        <span class="path">/api/register</span>
+      </div>
+      <p class="api-desc">Register a new user</p>
+
+      <h4>Request (multipart/form-data)</h4>
+      <pre class="code-block">
+{
+  "username": "John Doe",
+  "email": "[email protected]",
+  "password": "securePassword123",
+  "location": "Dhaka",
+  "profilePhoto": <file>
+}
+      </pre>
+
+      <h4>Response (201 Created)</h4>
+      <pre class="code-block">
+{
+  "_id": "60d5ec49f1b2c8b1f8e4e1a1",
+  "username": "John Doe",
+  "email": "[email protected]",
+  "location": "Dhaka",
+  "profilePhoto": "uploads/1624547401234.jpg",
+  "createdAt": "2024-01-15T10:30:00.000Z",
+  "updatedAt": "2024-01-15T10:30:00.000Z"
+}
+      </pre>
+    </div>
+
+    <div class="api-card">
+      <div class="api-header">
+        <span class="method post">POST</span>
+        <span class="path">/api/login</span>
+      </div>
+      <p class="api-desc">Login user</p>
+
+      <h4>Request (JSON)</h4>
+      <pre class="code-block">
+{
+  "email": "[email protected]",
+  "password": "securePassword123"
+}
+      </pre>
+
+      <h4>Response (200 OK)</h4>
+      <pre class="code-block">
+{
+  "_id": "...",
+  "username": "John Doe",
+  "email": "[email protected]",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+}
+      </pre>
+
+      <div class="note">
+        🔑 Include token in header:
+        <code>Authorization: Bearer TOKEN</code>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PRODUCTS ================= -->
+  <section id="products-api" class="api-section">
+    <h3>🛍 Products API</h3>
+
+    <div class="api-card">
+      <div class="api-header">
+        <span class="method get">GET</span>
+        <span class="path">/api/products</span>
+      </div>
+      <p class="api-desc">Get all products</p>
+    </div>
+
+    <div class="api-card">
+      <div class="api-header">
+        <span class="method get">GET</span>
+        <span class="path">/api/products/:id</span>
+      </div>
+      <p class="api-desc">Get single product</p>
+    </div>
+
+    <div class="api-card">
+      <div class="api-header">
+        <span class="method post">POST</span>
+        <span class="path">/api/products</span>
+      </div>
+      <p class="api-desc">Create product</p>
+    </div>
+  </section>
+
+  <!-- ================= CART ================= -->
+  <section id="cart-api" class="api-section">
+    <h3>🛒 Cart API</h3>
+
+    <div class="protected">
+      🔒 All routes require <strong>Bearer Token</strong>
+    </div>
+
+    <div class="api-card">
+      <div class="api-header">
+        <span class="method get">GET</span>
+        <span class="path">/api/cart/find</span>
+      </div>
+      <p class="api-desc">Get user cart</p>
+    </div>
+
+    <div class="api-card">
+      <div class="api-header">
+        <span class="method post">POST</span>
+        <span class="path">/api/cart</span>
+      </div>
+      <p class="api-desc">Add item to cart</p>
+    </div>
+
+    <div class="api-card">
+      <div class="api-header">
+        <span class="method delete">DELETE</span>
+        <span class="path">/api/cart/:cartItem</span>
+      </div>
+      <p class="api-desc">Remove item</p>
+    </div>
+  </section>
+
+  <!-- ================= STRIPE ================= -->
+  <section id="payment-api" class="api-section">
+    <h3>💳 Payment API (Stripe)</h3>
+
+    <div class="api-card">
+      <div class="api-header">
+        <span class="method post">POST</span>
+        <span class="path">/stripe/create-checkout-session</span>
+      </div>
+      <p class="api-desc">Create Stripe checkout session</p>
+    </div>
+
+    <div class="api-card">
+      <div class="api-header">
+        <span class="method post">POST</span>
+        <span class="path">/webhook</span>
+      </div>
+      <p class="api-desc">Stripe webhook endpoint</p>
+    </div>
+  </section>
+ </div>
+
+        </section>
+
+<section id="deployment">
+
+  <h2 class="section-title">🚀 Deployment</h2>
+
+
+  <!-- ================= BACKEND ================= -->
+  <div class="deploy-group">
+    <h3 class="sub-title">Backend Deployment (Railway / Heroku / Render)</h3>
+
+    <div class="deploy-card">
+      <h4>Using Railway (Recommended)</h4>
+
+      <ol class="styled-list">
+        <li>Create an account at 
+          <a href="https://railway.app" target="_blank">railway.app</a>
+        </li>
+        <li><strong>New Project → Deploy from GitHub repo</strong></li>
+        <li>Select your backend repository</li>
+        <li>Add environment variables in Railway dashboard</li>
+        <li>Railway automatically deploys your project</li>
+        <li>
+          Deployment URL example:
+          <code>https://your-app.railway.app</code>
+        </li>
+      </ol>
+
+      <div class="info-box">
+        📝 <strong>Important:</strong> Update CORS settings in your backend
+        to allow your deployed frontend domain.
+      </div>
+    </div>
+
+    <div class="deploy-card">
+      <h4>Production Environment Variables</h4>
+
+      <pre class="code-block">
+# Backend API
+PORT=3005
+MONGO_URI=mongodb+srv://...
+SECRET=production-secret-key
+JWT_SECRET=production-jwt-secret
+
+# Payment Backend
+PORT=3003
+MONGO_URI=mongodb+srv://...
+STRIPE_SECRET=sk_live_...
+STRIPE_WEBHOOK_SECRET=whsec_...
+STRIPE_PUBLISHABLE_KEY=pk_live_...
+      </pre>
+
+      <div class="warning-box">
+        ⚠️ Always use <strong>Live Stripe Keys</strong> in production.
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ================= FLUTTER ================= -->
+  <div class="deploy-group">
+    <h3 class="sub-title">🦋 Flutter App Deployment</h3>
+
+    <div class="deploy-card">
+      <h4>Step 1: Prepare for Production</h4>
+      <ul class="styled-list">
+        <li>Update API base URL to production backend</li>
+        <li>Ensure backend uses HTTPS</li>
+        <li>Switch Stripe keys to Live mode</li>
+        <li>Test full checkout & authentication flow</li>
+        <li>Update version in <code>pubspec.yaml</code></li>
+      </ul>
+    </div>
+
+    <div class="deploy-card">
+      <h4>Step 2: Build Android</h4>
+
+      <p><strong>Release APK:</strong></p>
+      <pre class="code-block">flutter build apk --release</pre>
+
+      <p><strong>App Bundle (Recommended for Play Store):</strong></p>
+      <pre class="code-block">flutter build appbundle</pre>
+
+      <div class="info-box">
+        ℹ️ Upload the generated <code>.aab</code> file to Google Play Console.
+      </div>
+    </div>
+
+    <div class="deploy-card">
+      <h4>Step 3: Build iOS (macOS Required)</h4>
+
+      <pre class="code-block">flutter build ios --release</pre>
+
+      <p>
+        Open the iOS project in Xcode → Archive → Submit to App Store Connect.
+      </p>
+
+      <div class="info-box">
+        ℹ️ macOS with Xcode installed is required for iOS builds.
+      </div>
+    </div>
+
+    <div class="warning-box">
+      ⚠️ <strong>Before Publishing:</strong>
+      <ul>
+        <li>Set correct app icons & splash screen</li>
+        <li>Configure Android keystore & iOS certificates</li>
+        <li>Verify production environment variables</li>
+        <li>Test payments using live Stripe keys</li>
+      </ul>
+    </div>
+  </div>
+
+
+  <!-- ================= WEBHOOK ================= -->
+  <div class="deploy-group">
+    <h3 class="sub-title">🔔 Webhook Configuration (Production)</h3>
+
+    <div class="deploy-card">
+      <ol class="styled-list">
+        <li>Deploy your payment backend</li>
+        <li>Go to Stripe Dashboard → Webhooks</li>
+        <li>Update webhook endpoint to production URL</li>
+        <li>
+          Example:
+          <code>https://your-payment-backend.railway.app/webhook</code>
+        </li>
+        <li>Update <code>STRIPE_WEBHOOK_SECRET</code> in production environment variables</li>
+      </ol>
+    </div>
+  </div>
+
+</section>
+
+<!-- ================= TROUBLESHOOTING ================= -->
+<section id="troubleshooting">
+
+  <h2 class="section-title">🔧 Troubleshooting</h2>
+  <h3 class="sub-title">Common Issues & Solutions</h3>
+
+
+  <!-- ISSUE 1 -->
+  <div class="issue-card">
+    <h4>1️⃣ Cannot connect to MongoDB</h4>
+
+    <div class="error-box">
+      <strong>Error:</strong> MongoNetworkError or connection timeout
+    </div>
+
+    <ul class="styled-list">
+      <li>Check MongoDB Atlas IP whitelist (use <code>0.0.0.0/0</code> for development)</li>
+      <li>Verify connection string in <code>.env</code></li>
+      <li>Ensure database user has correct permissions</li>
+      <li>Confirm MongoDB cluster is active</li>
+    </ul>
+  </div>
+
+
+  <!-- ISSUE 2 -->
+  <div class="issue-card">
+    <h4>2️⃣ Token is not valid</h4>
+
+    <div class="error-box">
+      <strong>Error:</strong> 403 Forbidden
+    </div>
+
+    <ul class="styled-list">
+      <li>Check header format: <code>token: Bearer YOUR_TOKEN</code></li>
+      <li>Ensure <code>JWT_SECRET</code> matches login + verification</li>
+      <li>Verify token has not expired</li>
+      <li>Login again to generate a new token</li>
+    </ul>
+  </div>
+
+
+  <!-- ISSUE 3 -->
+  <div class="issue-card">
+    <h4>3️⃣ Webhook signature verification failed</h4>
+
+    <div class="error-box">
+      <strong>Error:</strong> Stripe webhook error 400
+    </div>
+
+    <ul class="styled-list">
+      <li>Verify <code>STRIPE_WEBHOOK_SECRET</code></li>
+      <li>Use <code>express.raw()</code> middleware for webhook route</li>
+      <li>Confirm webhook URL in Stripe Dashboard</li>
+      <li>
+        Test locally with:
+        <code>stripe listen --forward-to localhost:3003/webhook</code>
+      </li>
+    </ul>
+  </div>
+
+
+  <!-- ISSUE 4 -->
+  <div class="issue-card">
+    <h4>4️⃣ File upload not working</h4>
+
+    <div class="error-box">
+      <strong>Error:</strong> No file received
+    </div>
+
+    <ul class="styled-list">
+      <li>Ensure <code>uploads</code> folder exists</li>
+      <li>Check field name matches <code>upload.single('profilePhoto')</code></li>
+      <li>Verify request is <code>multipart/form-data</code></li>
+      <li>Check multer file size limits</li>
+    </ul>
+  </div>
+
+
+  <!-- ISSUE 5 -->
+  <div class="issue-card">
+    <h4>5️⃣ CORS error in mobile app</h4>
+
+    <div class="error-box">
+      <strong>Error:</strong> Access-Control-Allow-Origin error
+    </div>
+
+    <ul class="styled-list">
+      <li>Ensure <code>app.use(cors())</code> is enabled</li>
+      <li>For specific origin:
+        <code>cors({ origin: 'your-app-url' })</code>
+      </li>
+      <li>Verify correct API URL in mobile config</li>
+    </ul>
+  </div>
+
+
+  <!-- ISSUE 6 -->
+  <div class="issue-card">
+    <h4>6️⃣ Search not returning results</h4>
+
+    <div class="error-box">
+      <strong>Error:</strong> Empty search or index error
+    </div>
+
+    <ul class="styled-list">
+      <li>Create MongoDB Atlas Search index</li>
+      <li>Ensure index name matches (<code>shoes</code>)</li>
+      <li>Wait for index to build</li>
+      <li>Test simple query first</li>
+    </ul>
+  </div>
+
+
+  <!-- ISSUE 7 -->
+  <div class="issue-card">
+    <h4>7️⃣ Mobile app can't connect to localhost</h4>
+
+    <div class="error-box">
+      <strong>Error:</strong> Network request failed
+    </div>
+
+    <ul class="styled-list">
+      <li>Replace <code>localhost</code> with computer IP</li>
+      <li>Use <code>ipconfig</code> (Windows) or <code>ifconfig</code> (Mac/Linux)</li>
+      <li>Ensure same WiFi network</li>
+      <li>Check firewall settings</li>
+    </ul>
+  </div>
+
+
+  <!-- HELP -->
+  <div class="help-box">
+    💡 <strong>Still having issues?</strong>
+    <ul>
+      <li>Check server console logs</li>
+      <li>Run with debug mode: <code>DEBUG=* npm start</code></li>
+      <li>Test APIs with Postman / Thunder Client</li>
+      <li>Review GitHub repository issues</li>
+    </ul>
+  </div>
+
+</section>
+
+
+<!-- SUPPORT -->
+<section id="support"><h3 class="sub-title">Getting Support</h3>
+<p class="section-desc">
+  If you need assistance, you can contact us directly using the options below:
+</p>
+
+<div class="support-grid">
+
+  <div class="support-card highlight-support">
+    <h4>📧 Email Support</h4>
+    <p>For technical questions and detailed support inquiries:</p>
+    <p class="contact-info">
+      <a href="mailto:amhimeltech@gmail.com">
+        amhimeltech@gmail.com
+      </a>
+    </p>
+  </div>
+
+  <div class="support-card highlight-support">
+    <h4>📱 WhatsApp Support</h4>
+    <p>For quick assistance and urgent issues:</p>
+    <p class="contact-info">
+      <a href="https://wa.me/8801346457797" target="_blank">
+        01346457797
+      </a>
+    </p>
+  </div>
+
+  <div class="support-card highlight-support">
+    <h4>📚 Documentation</h4>
+    <p class="contact-info">Review this complete documentation for setup and usage guidance.</p>
+  </div>
+
+  <div class="support-card highlight-support">
+    <h4>🐛 Bug Reports</h4>
+    <p class="contact-info">Submit bug reports with detailed reproduction steps and screenshots.</p>
+  </div>
+
+</div>
+
+  <!-- ================= CREDITS ================= -->
+  <h3 class="sub-title">🙏 Credits & Acknowledgments</h3>
+  <p class="section-desc">
+    Built using modern technologies and trusted open-source libraries:
+  </p>
+
+  <div class="tech-tags">
+    <span>Flutter</span>
+    <span>Dart</span>
+    <span>Node.js</span>
+    <span>Express.js</span>
+    <span>MongoDB</span>
+    <span>Mongoose</span>
+    <span>Stripe</span>
+    <span>JWT</span>
+  </div>
+</section>
+
+      </main>
+    </div>
+
+    <!-- SCROLL SPY SCRIPT -->
+    <script>
+      const navLinks = document.querySelectorAll(".sidebar a");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              navLinks.forEach((link) => {
+                link.classList.toggle(
+                  "active",
+                  link.getAttribute("href") === `#${entry.target.id}`,
+                );
+              });
+            }
+          });
+        },
+        {
+          rootMargin: "-40% 0px -55% 0px",
+          threshold: 0,
+        },
+      );
+
+      document
+        .querySelectorAll("section, main [id]")
+        .forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>
