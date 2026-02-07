@@ -737,6 +737,57 @@ body {
   border: 2px solid #667eea;
 }
 
+.custom-section {
+  margin-top: 3rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-desc {
+  margin-bottom: 2rem;
+  color: #666;
+}
+
+.custom-card {
+  background: #ffffff;
+  padding: 1.8rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1.8rem;
+  transition: transform 0.2s ease;
+}
+
+.custom-card:hover {
+  transform: translateY(-3px);
+}
+
+.custom-card h3 {
+  margin-bottom: 1rem;
+}
+
+.custom-card ul,
+.custom-card ol {
+  padding-left: 1.2rem;
+}
+
+.custom-card code {
+  background: #f4f4f4;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.tip-box {
+  background: #eef4ff;
+  padding: 1.2rem;
+  border-left: 4px solid #667eea;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
 .contact-info {
   margin-top: 0.8rem;
   font-weight: 600;

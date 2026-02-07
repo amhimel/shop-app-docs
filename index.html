@@ -40,6 +40,7 @@
               <li><a href="#backend-setup">Backend Setup</a></li>
               <li><a href="#payment-setup">Payment Setup</a></li>
               <li><a href="#frontend-setup">Frontend Setup</a></li>
+              <li><a href="#customization">App Customization</a></li>
             </ul>
           </li>
 
@@ -804,7 +805,113 @@ flutter pub get
             <strong>💡 Tip:</strong> Use Flutter DevTools for debugging and
             performance monitoring.
           </div>
+
         </section>
+
+<section id="customization">
+  <h2 class="section-title">🎨 App Customization</h2>
+
+  <!-- Package Name -->
+  <h3 class="sub-title">📦 Change Package Name (Android)</h3>
+
+  <div class="deploy-card">
+    <ol class="styled-list">
+      <li>Open the project in <strong>Android Studio</strong></li>
+      <li>Press <strong>CTRL + SHIFT + R</strong> (Replace in Path)</li>
+      <li>
+        Enter your current package name  
+        <code>com.myapp.app</code>
+      </li>
+      <li>Enter your new package name</li>
+      <li>Click <strong>Replace All</strong></li>
+      <li>
+        Run:
+        <code>flutter clean</code> → <code>flutter pub get</code>
+      </li>
+    </ol>
+
+    <div class="info-box">
+      ℹ️ Make sure the new package name is unique (e.g. com.yourcompany.appname)
+    </div>
+  </div>
+
+  <!-- App Logo -->
+  <h3 class="sub-title">🖼 Change App Logo</h3>
+
+  <div class="deploy-card">
+    <ul class="styled-list">
+      <li>Go to <code>android/app/src/main/res</code></li>
+      <li>Replace all <code>mipmap</code> launcher icons</li>
+      <li>Recommended: Use an online app icon generator</li>
+      <li>If used in UI, replace: <code>assets/images/logo.png</code></li>
+    </ul>
+
+    <div class="info-box">
+      ℹ️ After updating assets, run <code>flutter pub get</code>
+    </div>
+  </div>
+
+  <!-- Configure App -->
+  <h3 class="sub-title">⚙️ Configure App Settings</h3>
+
+  <div class="deploy-card">
+    <ul class="styled-list">
+      <li>Open <code>lib/config.dart</code></li>
+      <li>Update <strong>appName</strong></li>
+      <li>Update API base URL to your backend</li>
+      <li>Update Stripe publishable key (if required)</li>
+      <li>Replace branding colors & texts</li>
+    </ul>
+  </div>
+
+  <div class="warning-box">
+    ⚠️ After major changes, always run <code>flutter clean</code> before building release version.
+  </div>
+
+<!-- iOS Bundle Identifier -->
+<h3 class="sub-title">🍎 Change iOS Bundle Identifier</h3>
+
+<div class="deploy-card">
+  <ol class="styled-list">
+    <li>Open the <strong>ios</strong> folder in your Flutter project</li>
+    <li>Open <strong>ios/Runner.xcworkspace</strong> using Xcode</li>
+    <li>Select the <strong>Runner</strong> project from the left sidebar</li>
+    <li>Click the <strong>Runner</strong> target under "Targets"</li>
+    <li>Go to the <strong>General</strong> tab</li>
+    <li>
+      Change the <strong>Bundle Identifier</strong>  
+      (e.g. <code>com.yourcompany.appname</code>)
+    </li>
+    <li>Ensure the new bundle ID matches your Apple Developer account</li>
+  </ol>
+
+  <div class="info-box">
+    ℹ️ Bundle Identifier must be unique and registered in your Apple Developer account.
+  </div>
+</div>
+
+<div class="deploy-card">
+  <h4>Update App Display Name (Optional)</h4>
+  <ol class="styled-list">
+    <li>In Xcode, go to <strong>Runner → General</strong></li>
+    <li>Update the <strong>Display Name</strong></li>
+    <li>Or edit directly in <code>ios/Runner/Info.plist</code></li>
+  </ol>
+</div>
+
+<div class="warning-box">
+  ⚠️ After changing Bundle Identifier, run:
+  <br /><br />
+  <code>flutter clean</code><br />
+  <code>flutter pub get</code>
+</div>
+
+
+
+</section>
+
+
+
 
         <section id="configuration">
           <h2>🔐 Configuration</h2>
